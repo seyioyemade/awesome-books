@@ -1,4 +1,11 @@
-.contaner {
-  display: flex;
-  justify-content: center;
+.add-book button {
+  margin-top: 20px;
 }
+
+input {
+  display: block;
+  margin-top: 20px;
+}
+
+
+
