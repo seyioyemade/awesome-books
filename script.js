@@ -1,68 +1,87 @@
-let books = JSON.parse(localStorage.getItem('BookInformation')) || [];
+class Book {
+  constructor() {
+    this.section = document.querySelector('.all-books');
+    this.newTitle = document.querySelector('#title');
+    this.newAuthor = document.querySelector('#author');
+    this.form = document.querySelector('form');
+    this.bookInformation = "BookInformation";
+    this.booksCollection = JSON.parse(localStorage.getItem(this.bookInformation)) || [];
+  }
 
-const section = document.querySelector('.all-books');
-const newTitle = document.querySelector('#title');
-const newAuthor = document.querySelector('#author');
-const form = document.querySelector('form');
+  displayBooks(id, title, author) {
+    const div = document.createElement('div');
+    div.className = 'book';
+    div.id = id;
+    const titleParagragh = document.createElement('p');
+    titleParagragh.textContent = title;
+    const authorParagraph = document.createElement('p');
+    authorParagraph.textContent = author;
+    const button = document.createElement('button');
+    button.textContent = 'Remove';
 
-function removeBook(id) {
-  books = books.filter((item) => item.id !== Number(id));
+    button.addEventListener('click', () => {
+      this.removeBook(div.id);
+    });
 
-  localStorage.setItem('BookInformation', JSON.stringify(books));
-  const currentBooks = JSON.parse(localStorage.getItem('BookInformation'));
+    const divider = document.createElement('hr');
+    div.append(titleParagragh, authorParagraph, button, divider);
+    this.section.appendChild(div);
+  }
 
-  const allBooks = document.querySelectorAll('.book');
+  addBook() {
+    const book = {
+      id: Math.floor(Math.random() * 10000000),
+      title: this.newTitle.value,
+      author: this.newAuthor.value,
+    };
+    
+    if (!(book.title === '' || book.author === '')) {
 
-  allBooks.forEach((book) => {
-    book.style.display = 'none';
-  });
+      this.booksCollection.push(book);
+      this.setStorageItem()
+      this.displayBooks(book.id, book.title, book.author);
 
-  currentBooks.forEach((book) => {
-    displayBooks(book.title, book.author, book.id);
-  });
+    }
+        this.newTitle.value = '';
+        this.newAuthor.value = '';
+  
+  }
+
+  removeBook(id) {
+    this.booksCollection = this.booksCollection.filter((item) => item.id !== Number(id));
+  
+    this.setStorageItem()
+
+    const currentBooks = JSON.parse(localStorage.getItem(this.bookInformation));
+  
+    const allBooks = document.querySelectorAll('.book');
+  
+    allBooks.forEach((book) => {
+      book.style.display = 'none';
+    });
+  
+    currentBooks.forEach((book) => {
+      this.displayBooks(book.id, book.title, book.author);
+    });
+  }
+
+  setStorageItem() {
+    localStorage.setItem(this.bookInformation, JSON.stringify(this.booksCollection));
+  }
+
+  get getStorageItem() {
+    this.booksCollection.forEach((book) => {
+      this.displayBooks(book.id, book.title, book.author);
+    });
+  }
+
+  submit() {
+    this.form.addEventListener("submit", () => this.addBook());
+  }
+
 }
 
-function displayBooks(title, author, id) {
-  const div = document.createElement('div');
-  div.className = 'book';
-  div.id = id;
-  const titleParagragh = document.createElement('p');
-  titleParagragh.textContent = title;
-  const authorParagraph = document.createElement('p');
-  authorParagraph.textContent = author;
-  const button = document.createElement('button');
-  button.textContent = 'Remove';
+const book = new Book();
+book.submit();
+book.getStorageItem
 
-  button.addEventListener('click', () => {
-    removeBook(div.id);
-  });
-
-  const divider = document.createElement('hr');
-  div.append(titleParagragh, authorParagraph, button, divider);
-  section.appendChild(div);
-}
-
-books.forEach((book) => {
-  displayBooks(book.title, book.author, book.id);
-});
-
-const addBook = function () {
-  const book = {
-    id: Math.floor(Math.random() * 10000000),
-    title: newTitle.value,
-    author: newAuthor.value,
-  };
-
-  books.push(book);
-
-  localStorage.setItem('BookInformation', JSON.stringify(books));
-  displayBooks(newTitle.value, newAuthor.value, book.id);
-};
-
-form.addEventListener('submit', (event) => {
-  event.preventDefault();
-
-  if (!(newTitle.value === '' || newAuthor.value === '')) { addBook(); }
-  newTitle.value = '';
-  newAuthor.value = '';
-});
