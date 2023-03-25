@@ -18,8 +18,15 @@ body {
   padding: 2rem;
 }
 
-.button, input, .all-books {
+.button,
+input,
+.all-books {
   border: 2px solid black;
+}
+
+button {
+  padding: 0.3rem;
+  box-shadow: 3px 3px 1px #000;
 }
 
 .add-book button {
@@ -52,11 +59,6 @@ hr {
 
 .all-books > :nth-child(odd) {
   background: lightgrey;
-}
-
-button {
-  padding: 0.3rem;
-  box-shadow: 3px 3px 1px #000000;
 }
 
 h1 {

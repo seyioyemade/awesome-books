@@ -5,23 +5,6 @@ const newTitle = document.querySelector('#title');
 const newAuthor = document.querySelector('#author');
 const form = document.querySelector('form');
 
-function removeBook(id) {
-  books = books.filter((item) => item.id !== Number(id));
-
-  localStorage.setItem('BookInformation', JSON.stringify(books));
-  const currentBooks = JSON.parse(localStorage.getItem('BookInformation'));
-
-  const allBooks = document.querySelectorAll('.book');
-
-  allBooks.forEach((book) => {
-    book.style.display = 'none';
-  });
-
-  currentBooks.forEach((book) => {
-    displayBooks(book.title, book.author, book.id);
-  });
-}
-
 function displayBooks(title, author, id) {
   const div = document.createElement('div');
   div.className = 'book';
@@ -34,17 +17,26 @@ function displayBooks(title, author, id) {
   button.textContent = 'Remove';
 
   button.addEventListener('click', () => {
-    removeBook(div.id);
+    books = books.filter((item) => item.id !== Number(id));
+
+    localStorage.setItem('BookInformation', JSON.stringify(books));
+    const currentBooks = JSON.parse(localStorage.getItem('BookInformation'));
+
+    const allBooks = document.querySelectorAll('.book');
+
+    allBooks.forEach((book) => {
+      book.style.display = 'none';
+    });
+
+    currentBooks.forEach((book) => {
+      displayBooks(book.title, book.author, book.id);
+    });
   });
 
   const divider = document.createElement('hr');
   div.append(titleParagragh, authorParagraph, button, divider);
   section.appendChild(div);
 }
-
-books.forEach((book) => {
-  displayBooks(book.title, book.author, book.id);
-});
 
 const addBook = function () {
   const book = {
