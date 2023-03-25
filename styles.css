@@ -1,0 +1,76 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+}
+
+.button,
+input,
+.all-books {
+  border: 2px solid black;
+}
+
+button {
+  padding: 0.3rem;
+  box-shadow: 3px 3px 1px #000;
+}
+
+.add-book button {
+  margin-top: 2rem;
+  padding: 0.3rem 0.8rem;
+  align-self: flex-end;
+}
+
+input {
+  display: block;
+  margin-top: 2rem;
+  padding: 0.3rem;
+}
+
+hr {
+  margin: 2rem 0;
+  width: 50%;
+}
+
+.all-books {
+  width: 32%;
+  margin-top: 1.5rem;
+}
+
+.book {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem;
+}
+
+.all-books > :nth-child(odd) {
+  background: lightgrey;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+.divider {
+  display: flex;
+  justify-content: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
