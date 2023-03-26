@@ -12,15 +12,59 @@ body {
 }
 
 .container {
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
+  padding: 0 10px;
+}
+
+header {
+  margin-top: 1rem;
+}
+
+header,
+footer {
+  border: 2px solid black;
+  padding: 1rem 1rem 1rem 2rem;
+}
+
+header nav {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  padding: 2rem;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+nav ul a:hover {
+  color: blue;
+}
+
+.date {
+  text-align: right;
+  margin: 0.5rem 0 5rem 0;
+}
+
+nav ul {
+  display: flex;
+}
+
+nav li {
+  list-style: none;
+  padding: 1rem;
+}
+
+nav li:nth-child(2) {
+  border-left: 2px solid #000;
+  border-right: 2px solid #000;
 }
 
 .button,
 input,
-.all-books {
+.all-books ul {
   border: 2px solid black;
 }
 
@@ -30,15 +74,14 @@ button {
 }
 
 .add-book button {
-  margin-top: 2rem;
-  padding: 0.3rem 0.8rem;
+  padding: 0.5rem 0.8rem;
   align-self: flex-end;
 }
 
 input {
   display: block;
-  margin-top: 2rem;
-  padding: 0.3rem;
+  padding: 0.7rem;
+  margin-bottom: 2rem;
 }
 
 hr {
@@ -46,23 +89,24 @@ hr {
   width: 50%;
 }
 
-.all-books {
-  width: 32%;
-  margin-top: 1.5rem;
-}
-
 .book {
   display: flex;
   justify-content: space-between;
-  padding: 0.5rem;
+  padding: 0.5rem 1rem 0.5rem 0.5rem; 
 }
 
-.all-books > :nth-child(odd) {
+.all-books ul {
+  display: block;
+  width: 45%;
+  margin: 2rem auto;
+}
+
+.all-books li:nth-child(odd) {
   background: lightgrey;
 }
 
 h1 {
-  font-size: 2.5rem;
+  font-size: 3rem;
 }
 
 .divider {
@@ -73,4 +117,36 @@ h1 {
 form {
   display: flex;
   flex-direction: column;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+footer {
+  margin-top: auto;
+  margin-bottom: 10px;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: flex;
+}
+
+.add-new > h1,
+.contact-info > h1 {
+  margin-bottom: 4rem;
+}
+
+.contact-info p {
+  margin-bottom: 2rem;
+}
+
+.contact-info ul {
+  margin: 0 0 2rem 3rem;
 }

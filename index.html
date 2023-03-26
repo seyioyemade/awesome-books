@@ -9,20 +9,51 @@
 </head>
 <body>
   <div class="container">
-    <h1>Awesome books</h1>
-    <section class="all-books">
+    <header>
+      <nav>
+        <a href="">Awesome Books</a>
+        <ul>
+            <li><a href="#" class="listMenu">List</a></li>
+            <li><a href="#" class="addNewMenu">Add new</a></li>
+            <li><a href="#" class="contactMenu">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
 
-    </section>
+    <main>
+      <div class="date"><p>March 22nd, 2023, 2:30pm</p></div>
+      
+      <section class="all-books show">
+        <h1>All awesome books</h1>
+      </section>
 
-    <section>
-      <div class="divider"><hr></div>
-      <h1>Add a new book</h1>
-      <form action="#" class="add-book">
-        <input type="text" placeholder="Title" id="title">
-        <input type="text" placeholder="Author" id="author">
-        <button type="submit">Add</button>
-      </form>
-    </section>
+      <section class="add-new hide">
+        <h1>Add a new book</h1>
+        <form action="#" class="add-book">
+          <input type="text" placeholder="Title" id="title">
+          <input type="text" placeholder="Author" id="author">
+          <button type="submit">Add</button>
+        </form>
+      </section>
+
+      <section class="contact-info hide">
+        <h1>Contact information</h1>
+          <div>
+            <p>Do you have any questions or you just want to say "Hello"? <br> You can reach out to us!</p>
+            <ul>
+              <li>Our email: mail@mail.com</li>
+              <li>Our phone number: 00000000000000</li>
+              <li>Our address: Street# 4, Dhoke Kala Khan Rawalpindi, Pakistan </li>
+            </ul>
+          </div>
+      </section>
+
+    </main>
+    
+    <footer>
+      <p>Copyright</p>
+    </footer>
+
   </div>
   <script src="script-classes.js"></script>
 </body>
