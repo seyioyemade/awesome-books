@@ -1,28 +1,34 @@
 class Book {
   constructor() {
-    this.section = document.querySelector('.all-books');
     this.newTitle = document.querySelector('#title');
     this.newAuthor = document.querySelector('#author');
     this.form = document.querySelector('form');
     this.bookInformation = 'BookInformation';
+    this.bookList = document.createElement('ul');
+    this.listMenu = document.querySelector('.listMenu');
+    this.addNewMenu = document.querySelector('.addNewMenu');
+    this.contactMenu = document.querySelector('.contactMenu');
+    this.booksSection = document.querySelector('.all-books');
+    this.booksSection.appendChild(this.bookList);
+    this.addNewSection = document.querySelector('.add-new');
+    this.contactSection = document.querySelector('.contact-info');
     this.booksCollection = JSON.parse(localStorage.getItem(this.bookInformation)) || [];
   }
 
   displayBooks(id, title, author) {
-    const div = document.createElement('div');
-    div.className = 'book';
-    div.id = id;
-    const titleParagragh = document.createElement('p');
-    titleParagragh.textContent = `"${title}" by ${author}`;
+    const li = document.createElement('li');
+    li.className = 'book';
+    li.id = id;
+    // const titleParagragh = document.createElement('p');
+    li.textContent = `"${title}" by ${author}`;
     const button = document.createElement('button');
     button.textContent = 'Remove';
-
+    li.appendChild(button);
     button.addEventListener('click', () => {
-      this.removeBook(div.id);
+      this.removeBook(li.id);
     });
 
-    div.append(titleParagragh, button);
-    this.section.appendChild(div);
+    this.bookList.appendChild(li);
   }
 
   addBook() {
@@ -72,8 +78,42 @@ class Book {
   submit() {
     this.form.addEventListener('submit', () => this.addBook());
   }
+
+  showBooks() {
+    this.listMenu.addEventListener('click', () => {
+      this.booksSection.classList.add('show');
+      this.addNewSection.classList.remove('show');
+      this.contactSection.classList.remove('show');
+    });
+  }
+
+  showAddNew() {
+    this.addNewMenu.addEventListener('click', () => {
+      if (this.booksSection.classList.contains('show')) {
+        this.booksSection.classList.remove('show');
+        this.booksSection.classList.add('hide');
+      }
+      this.addNewSection.classList.add('show');
+      this.contactSection.classList.remove('show');
+    });
+  }
+
+  showContact() {
+    this.contactMenu.addEventListener('click', () => {
+      if (this.booksSection.classList.contains('show')) {
+        this.booksSection.classList.remove('show');
+        this.booksSection.classList.add('hide');
+      }
+
+      this.addNewSection.classList.remove('show');
+      this.contactSection.classList.add('show');
+    });
+  }
 }
 
 const book = new Book();
 book.submit();
 book.getStorageItem();
+book.showBooks();
+book.showAddNew();
+book.showContact();
