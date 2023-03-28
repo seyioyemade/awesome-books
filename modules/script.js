@@ -1,4 +1,6 @@
-class Book {
+import * as navigation from './navigation.js';
+
+export default class Book {
   constructor() {
     this.newTitle = document.querySelector('#title');
     this.newAuthor = document.querySelector('#author');
@@ -19,7 +21,6 @@ class Book {
     const li = document.createElement('li');
     li.className = 'book';
     li.id = id;
-    // const titleParagragh = document.createElement('p');
     li.textContent = `"${title}" by ${author}`;
     const button = document.createElement('button');
     button.textContent = 'Remove';
@@ -80,40 +81,14 @@ class Book {
   }
 
   showBooks() {
-    this.listMenu.addEventListener('click', () => {
-      this.booksSection.classList.add('show');
-      this.addNewSection.classList.remove('show');
-      this.contactSection.classList.remove('show');
-    });
+    navigation.showBooks(this.booksSection, this.addNewSection, this.contactSection);
   }
 
   showAddNew() {
-    this.addNewMenu.addEventListener('click', () => {
-      if (this.booksSection.classList.contains('show')) {
-        this.booksSection.classList.remove('show');
-        this.booksSection.classList.add('hide');
-      }
-      this.addNewSection.classList.add('show');
-      this.contactSection.classList.remove('show');
-    });
+    navigation.showAddNew(this.booksSection, this.addNewSection, this.contactSection);
   }
 
   showContact() {
-    this.contactMenu.addEventListener('click', () => {
-      if (this.booksSection.classList.contains('show')) {
-        this.booksSection.classList.remove('show');
-        this.booksSection.classList.add('hide');
-      }
-
-      this.addNewSection.classList.remove('show');
-      this.contactSection.classList.add('show');
-    });
+    navigation.showContact(this.booksSection, this.addNewSection, this.contactSection);
   }
 }
-
-const book = new Book();
-book.submit();
-book.getStorageItem();
-book.showBooks();
-book.showAddNew();
-book.showContact();
