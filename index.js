@@ -1,7 +1,7 @@
-import * as script from './modules/script.js';
+import Book from './modules/script.js';
 import { DateTime } from './modules/luxon.js';
 
-const book = new script.Book();
+const book = new Book();
 book.submit();
 book.getStorageItem();
 book.showBooks();

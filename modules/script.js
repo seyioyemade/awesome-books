@@ -21,7 +21,6 @@ export default class Book {
     const li = document.createElement('li');
     li.className = 'book';
     li.id = id;
-    // const titleParagragh = document.createElement('p');
     li.textContent = `"${title}" by ${author}`;
     const button = document.createElement('button');
     button.textContent = 'Remove';
