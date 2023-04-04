@@ -34,18 +34,11 @@
 
 - This is a mobile and desktop browser responsive website.
 
-<details>
-  <summary>Client</summary>
-  <ul>
-    <li><a href="https://www.w3schools.com/html/">HTML</a></li>
-  </ul>
-  <ul>
-    <li><a href="https://www.w3schools.com/css/">CSS</a></li>
-  </ul>
-  <ul>
-    <li><a href="https://www.w3schools.com/js/">JS</a></li>
-  </ul>
-</details>
+  Client
+  
+- HTML, CSS, JS
+- No Frameworks
+- Technologies Used- HTML, CSS, JS, GIT, Linters (GitHub Actions, Lighthouse, Webhint, Stylelint)
 
 ### Key Features <a name="key-features"></a>
 
