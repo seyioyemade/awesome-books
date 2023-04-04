@@ -1,19 +1,21 @@
 <a name="readme-top"></a>
 
+<!-- TABLE OF CONTENTS -->
+
 # 📗 Table of Contents
 
 - [📖 About the Project](#about-project)
-  - [🛠 Built With](#built-with)
-    - [Tech Stack](#tech-stack)
-    - [Key Features](#key-features)
-  - [🚀 Live Demo](#live-demo)
+  - [🛠 Built With](#built-with)
+    - [Tech Stack](#tech-stack)
+    - [Key Features](#key-features)
+  - [🚀 Live Demo](#live-demo)
 - [💻 Getting Started](#getting-started)
-  - [Setup](#setup)
-  - [Prerequisites](#prerequisites)
-  - [Install](#install)
-  - [Usage](#usage)
-  - [Run tests](#run-tests)
-  - [Deployment](#triangular_flag_on_post-deployment)
+  - [Setup](#setup)
+  - [Prerequisites](#prerequisites)
+  - [Install](#install)
+  - [Usage](#usage)
+  - [Run tests](#run-tests)
+  - [Deployment](#triangular_flag_on_post-deployment)
 - [👥 Authors](#authors)
 - [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
@@ -22,17 +24,15 @@
 - [❓ FAQ (OPTIONAL)](#faq)
 - [📝 License](#license)
 
-# 📖 [AWESOME BOOKS] <a name="about-project"></a>
+# 📖 AWESOME BOOKS <a name="about-project"></a>
 
-- This project is called AWESOME BOOKS. It is based on implementing a add and remove feature on the website, and storing the data in local storage.
-
-*[AWESOME BOOKS]* is a website that is used test the knowledge of adding and removing books on the website.
+- This project is called AWESOME BOOKS. It is a web application where books names and their authors can be added, removed and displayed. The data is stored in local storage, and single page application is implemented.
 
 ## 🛠 Built With <a name="HTML and CSS and JS"></a>
 
 ### Tech Stack <a name="Front end (Javascript)"></a>
 
-- This is a mobile and desk-top browser responsive website.
+- This is a mobile and desktop browser responsive website.
 
 <details>
   <summary>Client</summary>
@@ -49,8 +49,10 @@
 
 ### Key Features <a name="key-features"></a>
 
-- *[Data is stored in local storage]*
-- *[Data can be retrieved from local storage]*
+- *A user can add book details*
+- *A user can remove book details*
+- *Data is stored in local storage*
+- *Data can be retrieved from local storage*
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -69,9 +71,8 @@ In order to run this project you need:
 
 Clone this repository to your desired folder:
 
-sh
-  git clone https://github.com/seyioyemade/awesome-books.git
-  cd AWESOME BOOKS
+- git clone https://github.com/seyioyemade/awesome-books.git
+- cd AWESOME BOOKS
 
 
 ### Install
@@ -93,7 +94,7 @@ Install this project with:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- Create dynamic navigation to different pages.
+- Improve the UI.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -113,7 +114,7 @@ If you like this project, please give it a star, and if you would love to tell m
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I would like to thank Microverse community for giving me the guide to building this project.
+- I would like to thank [Microverse](https://www.microverse.org/) for giving this opportunity to learn.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
